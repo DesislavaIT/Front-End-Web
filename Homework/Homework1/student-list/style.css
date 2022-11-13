@@ -1,0 +1,15 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+#main {
+  border: 1px solid red;
+  box-sizing: border-box;
+  height: 768px;
+  width: 1336px;
+  margin: auto;
+  margin-top: 24px;
+}
+
+/* Add your CSS here */
