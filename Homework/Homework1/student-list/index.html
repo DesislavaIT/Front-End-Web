@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="bg">
 
 <head>
   <meta charset="UTF-8">
@@ -7,11 +7,111 @@
   <title>HTML / CSS Exam Page</title>
 
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet"  
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
   <div id="main">
-    <!-- Add your HTML here -->
+    <header class="main_header">
+      <section class="first_section">
+        <h2 id="title">Списък от студенти</h2>
+        <nav class="menu">
+          <ul>
+            <li class="nav_item">Помощ</li>
+            <li class="nav_item">Начало</li>
+            <li class="nav_item">Изход</li>
+          </ul>
+        </nav>
+      </section>
+
+      <section class="second_section">
+        <input class="student-name" placeholder="Име на студент">
+        <button id="add_button">Добави</button>
+      </section>
+    </header>
+
+    <section class="main_section">
+      <ul id="people_list">
+        <li>
+          <div class="odd person">
+            <div>
+              <input id="ivan_btn" name="item" type="radio"/>
+              <i class="fa fa-check"></i>
+              <label for="ivan_btn">Иван</label>
+            </div>
+            
+            <input class="grade" type="number" min="2" max="6" placeholder="Оценка" required>
+          </div>
+        </li>
+        <li>
+          <div class="even person">
+            <div>
+              <input id="elena_btn" name="item" type="radio"/>
+              <i class="fa fa-check"></i>
+              <label for="elena_btn">Елена</label>
+            </div>
+
+            <input class="grade" type="number" min="2" max="6" placeholder="Оценка" required>
+          </div>
+        </li>
+        <li>
+          <div class="odd person">
+            <div>
+              <input id="petyr_btn" name="item" type="radio"/>
+              <i class="fa fa-check"></i>
+              <label for="petyr_btn">Петър</label>
+            </div>
+
+            <input class="grade" type="number" min="2" max="6" placeholder="Оценка" required>
+          </div>
+        </li>
+        <li>
+          <div class="even person">
+            <div>
+              <input id="joro_btn" name="item" type="radio"/>
+              <i class="fa fa-check"></i>
+              <label for="joro_btn">Жоро</label>
+            </div>
+
+            <input class="grade" type="number" min="2" max="6" placeholder="Оценка" required>
+          </div>
+        </li>
+        <li>
+          <div class="odd person">
+            <div>
+              <input id="niq_btn" name="item" type="radio"/>
+              <i class="fa fa-check"></i>
+              <label for="niq_btn">Ния</label>
+            </div>
+
+            <input class="grade" type="number" min="2" max="6" placeholder="Оценка" required>
+          </div> 
+        </li>
+        <li>
+          <div class="even person">
+            <div>
+              <input id="cani_btn" name="item" type="radio"/>
+              <i class="fa fa-check"></i>
+              <label for="cani_btn">Цани</label>
+            </div>
+
+            <input class="grade" type="number" min="2" max="6" placeholder="Оценка" required>
+          </div>
+        </li>
+        <li>
+          <div class="odd person">
+            <div>
+              <input id="martin_btn" name="item" type="radio"/>
+              <i class="fa fa-check"></i>
+              <label for="martin_btn">Мартин</label>
+            </div>
+
+            <input class="grade" type="number" min="2" max="6" placeholder="Оценка" required>
+          </div>
+        </li>
+      </ul>
+    </section>
   </div>
 </body>
 

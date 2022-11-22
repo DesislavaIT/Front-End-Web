@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    font-family: Arial;
+    background-color: #eeeeee;
+    height: 1000px;
+    width: 900px;
+}
+
+.material-symbols-outlined {
+    background-color: #5964E0;
+    color:  #FFFFFF;
+    border-radius: 3px;
+    position: relative;
+    float: right;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    align-self: flex-end;
+    margin: 20px 40px;
+}
+
+.main_header{
+    display: flex;
+    flex-direction: column;
+}
+
+.main_header_section {
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    box-shadow: 1px 2px 10px #888888;
+}
+
+#logo_img {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.main_div_header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.second_div_header {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#header_title {
+    margin-top: 10px;
+}
+
+#header_span {
+    margin-bottom: 10px;
+    color: #6E8098;
+}
+
+#header_btn {
+    align-self: center;
+    margin-right: 20px;
+    padding: 5px 10px;
+    color: #7781e7;
+    background-color: #e2e5ff;
+    border: none;
+    border-radius: 3px;
+}
+
+.main_div {
+    margin: 20px 40px;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    height: 550px;
+    box-shadow: 1px 2px 10px #888888;
+    padding: 5px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.first_section {
+    display: flex;
+    color: #6E8098;
+}
+
+#ulche {
+    margin-left: 20px;
+}
+
+.first_div {
+    display: flex;
+    justify-content: space-between;
+    /* margin-bottom: 20px; */
+}
+
+#apply_btn {
+    align-self: center;
+    padding: 5px 10px;
+    color: white;
+    background-color: #5964df;
+    border: none;
+    border-radius: 3px;
+}
+
+#role_name {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#location {
+    color: #5964df;
+}
+
+p {
+    color: #6E8098;
+}

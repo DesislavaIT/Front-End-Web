@@ -12,4 +12,128 @@ body, html {
   margin-top: 24px;
 }
 
-/* Add your CSS here */
+ul {
+  list-style-type: none;
+ }
+
+ .main_header {
+  height: 170px;
+  width: 1334px;
+  background-image: linear-gradient(green, white);
+ }
+
+ .first_section {
+  padding-top: 10px;
+	display: flex;
+  justify-content: space-between;
+ }
+
+ .second_section {
+	display: flex;
+  justify-content: center;
+  height: 40px;
+  margin-top: 5px;
+ }
+
+ .student-name {
+  text-indent: 8px;
+  font-size: 16px;
+  width: 900px;
+  border: none;
+ }
+
+ #add_button {
+  width: 300px;
+  background-color: purple;
+  color: white;
+  border-color: white;
+  border: 1px dashed;
+ }
+
+ #add_button:hover {
+  background-color: peru;
+ }
+
+ nav > ul {
+	display: flex;
+  justify-content: center;
+  width: 330px;
+}
+
+.nav_item {
+  border: 2px dotted;
+  border-color: blue;
+  color: white;
+  margin: 3px;
+  padding: 10px 20px;
+}
+
+#title {
+  color: white;
+  align-self: flex-end;
+  margin-left: 400px;
+}
+
+.menu {
+  margin-right: 45px;
+}
+
+#people_list {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.person {
+  font-size: 19px;
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.person:hover {
+  background-color: white;
+}
+
+.odd {
+  background-color: pink;
+}
+
+.even {
+  background-color: skyblue;
+}
+
+.grade {
+  height: 40px;
+  width: 120px;
+  margin-right: 10px;
+  text-indent: 8px;
+  font-size: 16px;
+}
+
+i {
+  visibility: hidden;
+  margin-right: 10px;
+}
+
+input[type="radio"] {
+  position: absolute;
+  left: -9999px;
+}
+
+.person:has(input[type="radio"]:checked) {
+  background-color: green;
+}
+
+input[type="radio"]:checked + i{
+  visibility: visible;
+  color: white;
+}
+
+input[type="radio"]:checked ~ label{
+  visibility: visible;
+  color: white;
+  text-decoration: line-through;
+}

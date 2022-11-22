@@ -1,0 +1,35 @@
+.main_header{
+    background-color: #006500;
+    height: 8rem;
+    margin-bottom: 0.7rem;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#div_main{
+    background-color: #00d000;
+    height: 23rem;
+    margin-bottom: 0.7rem;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.main_footer{
+    display: flex;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#div1{
+    background-color: #8c0084;
+    height: 4rem;
+    margin-right: 0.7rem;
+    flex: 1;
+}
+
+#div2{
+    background-color: #0700ff;
+    height: 4rem;
+    margin-left: 0.7rem;
+    flex: 1;
+}
