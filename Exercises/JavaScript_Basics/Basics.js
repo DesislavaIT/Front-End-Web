@@ -6,6 +6,7 @@ for(let i = 0; i < 5; i++)
     console.log(A[i]);
 }
 
+
 //Problem2
 var B = new Array(A.length);
 console.log(B);
