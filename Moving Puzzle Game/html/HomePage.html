@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Home Page</title>
+
+        <link rel="stylesheet" href="../css/HomePage.css">
+        <script src="../js/HomePage.js" defer></script>
+    </head>
+
+    <body>
+        <header>
+            <h2>Moving Puzzle Game</h2>
+            <img id="puzzle_img" src="../images/Puzzle.png" alt="puzzle_icon"> 
+        </header>
+
+        <section id="main_section">
+            <div id="play_div">
+                <div id="one_line">
+                    <h1>Level:</h1>
+                    <select id="size" name="size" required>
+                        <option value="Easy">
+                            Easy
+                        </option>
+                        <option value="Medium">
+                            Medium
+                        </option>
+                        <option value="Hard">
+                            Hard
+                        </option>
+                    </select>
+                </div>
+            
+                <img id="puzzle_image" src="../images/Taj Mahal.jpg" alt="puzzle image">
+                <button id="startGame_Btn">Start game</button>
+            </div>
+
+            <div id="ranking_div">
+                <h1 id="ranking_title">You are currently {number} in the ranking</h1>
+                <button id="seeRanking_btn">See ranking</button>
+            </div>
+        </section>
+    </body>
+</html>

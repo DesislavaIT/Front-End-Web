@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 700px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+html { 
+    /* background: url(../images/background.jpg) no-repeat center center fixed;  */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+    border: 1px black solid;
+    border-radius: 10px;
+    height: 50px;
+    background-color: darkmagenta;
+    width: 96%;
+}
+
+h2 {
+    color: white;
+}
+
+#puzzle_img {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    border: 2px solid darkmagenta;
+    border-radius: 5px;
+}
+
+#puzzle_img:hover {
+    border-color: white;
+}
+
+#main_section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 660px;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+#play_div {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+#one_line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#size {
+    margin-left: 10px;
+    font-size: 22px;
+}
+
+#puzzle_image {
+    width: 600px;
+    height: 400px;
+}
+
+#startGame_Btn {
+    width: 200px;
+    height: 50px;
+    font-size: 22px;
+    border-radius: 10px;
+    color: white;
+    background-color: darkmagenta; 
+}
+
+#startGame_Btn:hover {
+    background-color: #590059;
+    border-color: white;
+}
+
+#ranking_div {
+    width: 40%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#seeRanking_btn {
+    width: 200px;
+    height: 50px;
+    font-size: 22px;
+    border-radius: 10px;
+    color: white;
+    background-color: darkmagenta;
+}
+
+#ranking_title {
+    width: 400px;
+    text-align: center;
+}
+
+#seeRanking_btn:hover {
+    background-color: #590059;
+    border-color: white;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Sign Up</title>
+
+        <link rel="stylesheet" href="../css/SignUp.css">
+        <script src="../js/Login.js" defer></script>
+    </head>
+
+    <body>
+        <header>
+            <h2>Moving Puzzle Game</h2>
+            <div id="header_div">
+                <img id="puzzle_img" src="../images/Puzzle.png" alt="puzzle_icon"> 
+                <nav>
+                    <ul>
+                        <li><a href="../html/Login.html">Login</a></li>
+                        <li><a href="../html/SignUp.html">Sign up</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <form id="form">
+            <section id="main_section">
+                <h1>Sign Up</h1>
+                
+                <div id="fields_div">
+                    <div class="input_field">
+                        <span>Nickname:</span>
+                        <input type="text" placeholder="John Doe" required>
+                    </div>
+    
+                    <div class="input_field">
+                        <span>Email:</span>
+                        <input type="email" placeholder="john.doe@mail.com" required>
+                    </div>
+                    
+                    <div class="input_field">
+                        <span>Password:</span>
+                        <input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" required title="At least eight characters, one letter and one number.">
+                    </div>
+                    
+                    <div class="input_field">
+                        <span>Repeat password:</span>
+                        <input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" required title="At least eight characters, one letter and one number.">
+                    </div>
+                </div>
+            </section>
+
+            <footer>
+                <button class="btn">Sign up</button>
+                <a href="./Login.html">Return</a>
+            </footer>
+        </form>
+    </body>
+</html>

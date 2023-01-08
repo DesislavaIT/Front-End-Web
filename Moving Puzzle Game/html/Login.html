@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Login</title>
+
+        <link rel="stylesheet" href="../css/Login.css">
+        <script src="../js/Login.js" defer></script>
+    </head>
+
+    <body>
+        <header>
+            <h2>Moving Puzzle Game</h2>
+            <div id="header_div">
+                <img id="puzzle_img" src="../images/Puzzle.png" alt="puzzle_icon"> 
+                <nav>
+                    <ul>
+                        <li><a href="../html/Login.html">Login</a></li>
+                        <li><a href="../html/SignUp.html">Sign up</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <form id="form">
+            <section id="main_section">
+                <h1>Login</h1>
+                
+                <div id="main_div">
+                    <div id="fields_div">
+                        <div class="input_field">
+                            <span>Email:</span>
+                            <input type="email" placeholder="john.doe@mail.com" required>
+                        </div>
+                        
+                        <div class="input_field">
+                            <span>Password:</span>
+                            <input type="password" required>
+                        </div>
+                    </div>
+    
+                    <button class="btn">Login</button>
+                </div>
+            </section>
+
+            <footer>
+                <span id="question">You don't have account?</span>
+                <a href="./SignUp.html">Sign up</a>
+            </footer>
+        </form>
+    </body>
+</html>
