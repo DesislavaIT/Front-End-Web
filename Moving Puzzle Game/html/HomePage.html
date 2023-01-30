@@ -7,19 +7,39 @@
         <title>Home Page</title>
 
         <link rel="stylesheet" href="../css/HomePage.css">
-        <script src="../js/HomePage.js" defer></script>
+        <script type="module" src="../js/HomePage.js"></script>
     </head>
 
     <body>
         <header>
             <h2>Moving Puzzle Game</h2>
-            <img id="puzzle_img" src="../images/Puzzle.png" alt="puzzle_icon"> 
+            <div id="header_div">
+                <img id="puzzle_img" src="../images/Puzzle.png" alt="puzzle_icon"> 
+                <nav>
+                    <ul>
+                        <li><a href="../html/HomePage.html">Home Page</a></li>
+                        <li><a href="../html/Ranking.html">Ranking</a></li>
+                        <li><a href="../html/Game.html">Game</a></li>
+                        <li><a href="../html/Login.html">Log out</a></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
 
         <section id="main_section">
+            <p>You are given a puzzle that is shuffled. Your task is to arrange the puzzle in the shortest time. Here are some of the general rules of the game:<br>
+                <br>1. The final order will be shown in the beginning of the game.<br>
+                2. Your time will start after clicking the 'Start' or 'Restart' button.<br>
+                3. You can swap a piece of the puzzle only with the blank space.<br>
+                4. You can choose from 3 leves of difficulty:<br>
+                &emsp;&#x2022;&ensp;easy (9 pisces)<br>
+                &emsp;&#x2022;&ensp;medium (16 pisces)<br>
+                &emsp;&#x2022;&ensp;hard (25 pisces)<br>
+            </p>
+            
             <div id="play_div">
                 <div id="one_line">
-                    <h1>Level:</h1>
+                    <h3>Level:</h3>
                     <select id="size" name="size" required>
                         <option value="Easy">
                             Easy
@@ -32,15 +52,11 @@
                         </option>
                     </select>
                 </div>
-            
-                <img id="puzzle_image" src="../images/Taj Mahal.jpg" alt="puzzle image">
-                <button id="startGame_Btn">Start game</button>
+    
+                <button class="btn">Start game</button>
+                <button class="btn">See ranking</button>
             </div>
 
-            <div id="ranking_div">
-                <h1 id="ranking_title">You are currently {number} in the ranking</h1>
-                <button id="seeRanking_btn">See ranking</button>
-            </div>
         </section>
     </body>
 </html>

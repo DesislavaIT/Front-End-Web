@@ -7,7 +7,7 @@
         <title>Login</title>
 
         <link rel="stylesheet" href="../css/Login.css">
-        <script src="../js/Login.js" defer></script>
+        <script type="module" src="../js/Login.js"></script>
     </head>
 
     <body>
@@ -37,7 +37,7 @@
                         
                         <div class="input_field">
                             <span>Password:</span>
-                            <input type="password" required>
+                            <input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" required title="At least eight characters, one letter and one number.">
                         </div>
                     </div>
     

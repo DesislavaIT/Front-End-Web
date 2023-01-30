@@ -13,7 +13,6 @@ if(country["borders"])
   const borders = await bordersResponse.json();
   bordersString = borders.map(b => b["name"]["common"]).join(", ");
 }
-//http://universities.hipolabs.com/search?country=bulgaria
 
 const universitiesResponse = await fetch(`http://universities.hipolabs.com/search?country=${countryName}`);
 const universities = await universitiesResponse.json();
@@ -48,7 +47,7 @@ div.innerHTML = `
     <div class="detail-page-content-box-content">
       Population: ${country["population"]} <br />
       Languages: ${Object.values(country["languages"]).join(", ")} <br />
-      Timezone: ${country["timezones"][0]} <br />
+      Timezone: ${Object.values(country["timezones"]).join(", ")}<br />
       Currency: ${Object.values(country["currencies"]).map(c => c.name).join(", ")}
     </div>
   </div>

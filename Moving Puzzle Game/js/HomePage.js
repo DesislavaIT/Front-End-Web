@@ -1,76 +1,62 @@
-const selectElement = document.querySelector("#size");
+const puzzle_img = document.getElementById("puzzle_img");
+const nav = document.querySelector("nav");
+const header_div = document.getElementById("header_div");
 
-function changeSize () {
-    switch(selectElement.value) {
-        case "Easy":
-            console.log("Easy");
-            break;
-        case "Medium":
-            console.log("Medium");
-            break;
-        case "Hard":
-            console.log("Hard");
-            break;
+puzzle_img.onmouseover = function() {  puzzle_img.style.setProperty("border-color", "white"); }
+puzzle_img.onmouseout = function() {  puzzle_img.style.setProperty("border-color", "darkmagenta") }
+    
+var showNav = true;
+
+puzzle_img.addEventListener("click", function() {
+    if(showNav) {
+        showNav = false;
+        header_div.style.setProperty("border", "2px white solid");
+        nav.style.setProperty("display", "block");
+        puzzle_img.style.setProperty("border-color", "darkmagenta");
+        puzzle_img.onmouseover = function() {  puzzle_img.style.setProperty("border-color", "darkmagenta"); }
+        puzzle_img.onmouseout = function() {  puzzle_img.style.setProperty("border-color", "darkmagenta") }
     }
-}
-
-changeSize();
-
-selectElement.addEventListener("change", function() {
-    changeSize();
+    else
+    {
+        showNav = true;
+        header_div.style.setProperty("border", "none");
+        nav.style.setProperty("display", "none");
+        puzzle_img.style.setProperty("border-color", "white");
+        puzzle_img.onmouseover = function() {  puzzle_img.style.setProperty("border-color", "white"); }
+        puzzle_img.onmouseout = function() {  puzzle_img.style.setProperty("border-color", "darkmagenta") }
+    }
 });
-////////////
-// var canvas=document.getElementById("canvas");
-// var ctx=canvas.getContext("2d");
-// var cw=canvas.width;
-// var ch=canvas.height;
 
-// var rows=3;
-// var cols=3;
+// TODO:
+// const selectElement = document.querySelector("#size");
 
-// var img=new Image();
-// img.onload=start;
-// img.width=600;
-// img.height=400;
-// img.src="../images/Taj Mahal.jpg";
-// function start(){
- 
-//     var iw=canvas.width=img.width;
-//     var ih=canvas.height=img.height;
-//     var pieceWidth=iw/cols;
-//     var pieceHeight=ih/rows;
-
-//   var pieces = [
-//     {col:0,row:0},
-//     {col:1,row:0},
-//     {col:2,row:0},
-//     {col:0,row:1},
-//     {col:1,row:1},
-//     {col:2,row:1},
-//     {col:0,row:2},
-//     {col:1,row:2},
-//     {col:2,row:2},
-//   ]
-//     // shuffle(pieces);
-
-//     var i=0;
-//     for(var y=0;y<rows;y++){
-//     for(var x=0;x<cols;x++){
-//     var p=pieces[i++];
-//   ctx.drawImage(
-//     // from the original image
-//     img,
-//     // take the next x,y piece
-//     x*pieceWidth, y*pieceHeight, pieceWidth, pieceHeight,
-//     // draw it on canvas based on the shuffled pieces[] array
-//     p.col*pieceWidth, p.row*pieceHeight, pieceWidth, pieceHeight
-//   );
-// }}
-
-
+// function changeSize () {
+//     switch(selectElement.value) {
+//         case "Easy":
+//             console.log("Easy");
+//             break;
+//         case "Medium":
+//             console.log("Medium");
+//             break;
+//         case "Hard":
+//             console.log("Hard");
+//             break;
+//     }
 // }
 
-// function shuffle(a){
-//   for(var j, x, i = a.length; i; j = Math.floor(Math.random() * i), x = a[--i], a[i] = a[j], a[j] = x);
-//   return a;
-// };
+// changeSize();
+
+// selectElement.addEventListener("change", function() {
+//     changeSize();
+// });
+
+var start_btn = document.querySelectorAll(".btn")[0];
+var ranking_btn = document.querySelectorAll(".btn")[1];
+
+start_btn.addEventListener("click", event => {
+    location.href = "../html/Game.html";
+})
+
+ranking_btn.addEventListener("click", event => {
+    location.href = "../html/Ranking.html";
+})
