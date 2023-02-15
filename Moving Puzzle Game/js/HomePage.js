@@ -2,6 +2,9 @@ if(!localStorage.user) {
     location.href = "../html/Login.html";
 }
 
+///////////////////////////////////////////////////////////////////////////////////
+// NAV FUNCTIONALITY:
+
 const puzzle_img = document.getElementById("puzzle_img");
 const nav = document.querySelector("nav");
 const header_div = document.getElementById("header_div");
@@ -31,8 +34,13 @@ puzzle_img.addEventListener("click", function() {
     }
 });
 
-const selectElement = document.querySelector("#size");
+///////////////////////////////////////////////////////////////////////////////////
 
+const selectElement = document.querySelector("#size");
+const start_btn = document.querySelectorAll(".btn")[0];
+const ranking_btn = document.querySelectorAll(".btn")[1];
+
+//helper function
 function checkSize () {
     switch(selectElement.value) {
         case "Easy":
@@ -44,9 +52,7 @@ function checkSize () {
     }
 }
 
-var start_btn = document.querySelectorAll(".btn")[0];
-var ranking_btn = document.querySelectorAll(".btn")[1];
-
+//buttons functionality
 start_btn.addEventListener("click", event => {
     const size = checkSize();
     window.localStorage.setItem('size', size);

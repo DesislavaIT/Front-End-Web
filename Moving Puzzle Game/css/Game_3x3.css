@@ -1,3 +1,4 @@
+/* Action buttons size */
 .action_btn {
     width: 15vw;
     height: 20vh;
@@ -6,6 +7,7 @@
     font-size: 40px;
 }
 
+/* Responsive */
 @media only screen and (max-width: 915px) {
     #header_div {
         display: none;
@@ -19,13 +21,5 @@
 @media only screen and (max-width: 580px) {
     header {
         width: 90%;
-    }
-
-    #header_div {
-        display: none;
-    }
-
-    .action_btn {
-        width: 25vw;
     }
 }

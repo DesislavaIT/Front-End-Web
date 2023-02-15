@@ -5,7 +5,7 @@
 
 body {
     margin: 15px;
-    height: 90vh;
+    height: 95vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -20,6 +20,8 @@ html {
     -o-background-size: cover;
     background-size: cover;
 }
+
+/* Header */
 
 header {
     display: flex;
@@ -37,67 +39,6 @@ h2 {
     color: white;
 }
 
-#puzzle_img {
-    width: 40px;
-    height: 40px;
-    padding: 5px;
-    border: 2px solid darkmagenta;
-    border-radius: 10px;
-    align-self: flex-end;
-}
-
-p {
-    width: 50%;
-    font-size: 2.3vw;
-    text-align: left;
-    font-style: italic;
-}
-
-#main_section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90%;
-}
-
-h3 {
-    font-size: 30px;
-}
-
-#play_div {
-    margin-left: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 60%;
-}
-
-#one_line {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#size {
-    margin-left: 10px;
-    font-size: 22px;
-}
-
-.btn {
-    width: 200px;
-    height: 50px;
-    font-size: 22px;
-    border-radius: 10px;
-    color: white;
-    background-color: darkmagenta; 
-}
-
-.btn:hover {
-    background-color: #590059;
-    border-color: white;
-}
-
 #header_div {
     display: flex;
     flex-direction: column;
@@ -106,6 +47,15 @@ h3 {
     height: 237px;
     width: 150px;
     border-radius: 10px;
+}
+
+#puzzle_img {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    border: 2px solid darkmagenta;
+    border-radius: 10px;
+    align-self: flex-end;
 }
 
 nav {
@@ -165,6 +115,62 @@ li:last-child:hover {
     border-bottom-right-radius: 10px;
 }
 
+/* Main */
+
+#main_section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+}
+
+p {
+    width: 50%;
+    font-size: 2.3vw;
+    text-align: left;
+    font-style: italic;
+}
+
+#play_div {
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 60%;
+}
+
+#one_line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+#size {
+    margin-left: 10px;
+    font-size: 22px;
+}
+
+.btn {
+    width: 200px;
+    height: 50px;
+    font-size: 22px;
+    border-radius: 10px;
+    color: white;
+    background-color: darkmagenta; 
+}
+
+.btn:hover {
+    background-color: #590059;
+    border-color: white;
+}
+
+/* Responsive */
+
 @media only screen and (max-width: 900px) {
     #header_div {
         display: none;
@@ -183,15 +189,10 @@ li:last-child:hover {
     html { 
         background: none;
         background-color: white;
-        align-items: center;
     }
     
     header {
         width: 90%;
-    }
-
-    #header_div {
-        display: none;
     }
 
     #main_section {

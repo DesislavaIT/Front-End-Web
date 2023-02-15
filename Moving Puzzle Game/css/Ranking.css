@@ -5,7 +5,7 @@
 
 body {
     margin: 15px;
-    height: 90vh;
+    height: 95vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -20,6 +20,8 @@ html {
     -o-background-size: cover;
     background-size: cover;
 }
+
+/* Header */
 
 header {
     display: flex;
@@ -37,75 +39,6 @@ h2 {
     color: white;
 }
 
-#puzzle_img {
-    width: 40px;
-    height: 40px;
-    padding: 5px;
-    border: 2px solid darkmagenta;
-    border-radius: 10px;
-    align-self: flex-end;
-}
-
-#main_section {
-    width: 100%;
-    height: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-h1 {
-    font-size: 50px; 
-}
-
-#one_line {
-    position: absolute;
-    top: 15%;
-    left: 50% - 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#size {
-    margin-top: 5px;
-    margin-left: 20px;
-    font-size: 30px;
-}
-
-table {
-    position: absolute;
-    top: 25%;
-    left: 50% - 20px;
-    width: 70%;
-    background-color: white;
-    color: black;
-    table-layout: fixed;
-    border-collapse: collapse;
-}
-
-#th_row {
-    font-size: 30px;
-    background-color: darkmagenta;
-    color: white;
-}
-
-tr {
-    height: 50px;
-    font-size: 26px;
-}
-
-td {
-    font-size: 2vw;
-    border: 4px solid black;
-}
-
-#first_column {
-    width: 50px;
-}
-
 #header_div {
     display: flex;
     flex-direction: column;
@@ -114,6 +47,15 @@ td {
     height: 237px;
     width: 150px;
     border-radius: 10px;
+}
+
+#puzzle_img {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    border: 2px solid darkmagenta;
+    border-radius: 10px;
+    align-self: flex-end;
 }
 
 nav {
@@ -173,6 +115,70 @@ li:last-child:hover {
     border-bottom-right-radius: 10px;
 }
 
+/* Main */
+
+#main_section {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#one_line {
+    position: absolute;
+    top: 15%;
+    left: 50% - 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 50px; 
+}
+
+#size {
+    margin-top: 5px;
+    margin-left: 20px;
+    font-size: 30px;
+}
+
+table {
+    position: absolute;
+    top: 25%;
+    left: 50% - 20px;
+    width: 70%;
+    background-color: white;
+    color: black;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+#th_row {
+    font-size: 30px;
+    background-color: darkmagenta;
+    color: white;
+}
+
+tr {
+    height: 50px;
+    font-size: 26px;
+}
+
+td {
+    font-size: 2vw;
+    border: 4px solid black;
+}
+
+#first_column {
+    width: 50px;
+}
+
+/* Footer */
+
 footer {
     display: flex;
     height: 80px;
@@ -196,6 +202,8 @@ footer {
     color: white;
 }
 
+/* Responsive */
+
 @media only screen and (max-width: 1300px) {
     #header_div {
         display: none;
@@ -217,16 +225,8 @@ footer {
         width: 90%;
     }
 
-    #header_div {
-        display: none;
-    }
-
     table {
         width: 100%;
-    }
-
-    footer {
-        color: black;
     }
 
     td {

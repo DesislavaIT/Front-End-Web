@@ -1,3 +1,8 @@
+localStorage.clear();
+
+///////////////////////////////////////////////////////////////////////////////////
+// NAV FUNCTIONALITY:
+
 const puzzle_img = document.getElementById("puzzle_img");
 const nav = document.querySelector("nav");
 const header_div = document.getElementById("header_div");
@@ -30,8 +35,6 @@ puzzle_img.addEventListener("click", function() {
 ///////////////////////////////////////////////////////////////////////////////////
 // DATABASE:
 
-localStorage.clear();
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import { getDatabase, ref, child, get} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
@@ -57,6 +60,7 @@ passwordInput.value = "";
 
 var emailExistsVar;
 
+//validations
 function emailExists() {
     const dbRef = ref(getDatabase());
     get(child(dbRef, `users`)).then((snapshot) => {
@@ -84,19 +88,15 @@ loginBtn.addEventListener("click", event => {
             const user = Object.values(data).filter(k => k["email"] === emailInput.value)[0];
             
             if(user["password"] === passwordInput.value) {
-                console.log("You have logged in.");
-                
                 setTimeout(() => {
                     emailInput.value = "";
                     passwordInput.value = "";
 
-                    console.log(user);
                     window.localStorage.setItem('user', user.username);
                     location.href = "../html/HomePage.html";
                 }, 1000); 
             }
             else {
-                console.log("Wrong password.");
                 passwordInput.setCustomValidity("Wrong password.");
                 passwordInput.reportValidity();
             }

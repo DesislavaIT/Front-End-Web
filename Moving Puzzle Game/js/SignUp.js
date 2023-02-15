@@ -1,3 +1,8 @@
+localStorage.clear();
+
+///////////////////////////////////////////////////////////////////////////////////
+// NAV FUNCTIONALITY:
+
 const puzzle_img = document.getElementById("puzzle_img");
 const nav = document.querySelector("nav");
 const header_div = document.getElementById("header_div");
@@ -30,8 +35,6 @@ puzzle_img.addEventListener("click", function() {
 ///////////////////////////////////////////////////////////////////////////////////
 // DATABASE:
 
-localStorage.clear();
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import { getDatabase, ref, child, get, set} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
@@ -59,7 +62,8 @@ emailInput.value = "";
 passwordInput.value = "";
 passwordRepeatInput.value = "";
 
-usernameInput.setCustomValidity("This field is required!");
+var usernameExistsVar;
+var emailExistsVar;
 
 function setInitialTitles() {
     usernameInput.setCustomValidity("This field is required!");
@@ -70,6 +74,7 @@ function setInitialTitles() {
 
 setInitialTitles();
 
+//validations
 function checkInput() {
     setInitialTitles();
     if (usernameInput.validity.typeMismatch || usernameInput.value === "") {
@@ -94,9 +99,6 @@ function checkInput() {
 
     return true;
 }
-
-var usernameExistsVar;
-var emailExistsVar;
 
 function usernameExists() {
     const dbRef = ref(getDatabase());
@@ -134,7 +136,6 @@ function emailExists() {
 
 function passwordsMatch() {
     if(passwordInput.value !== passwordRepeatInput.value) {
-        console.log("Passwords don't match.");
         return false;
     }
 
@@ -163,7 +164,6 @@ signUpBtn.addEventListener("click", event => {
             emailInput.value = "";
             passwordInput.value = "";
             passwordRepeatInput.value = "";
-
 
             window.localStorage.setItem('user', user.username);
             location.href = "../html/HomePage.html";

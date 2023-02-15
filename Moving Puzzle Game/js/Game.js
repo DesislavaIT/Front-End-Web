@@ -2,6 +2,9 @@ if(!localStorage.user) {
     location.href = "../html/Login.html";
 }
 
+///////////////////////////////////////////////////////////////////////////////////
+// NAV FUNCTIONALITY:
+
 const puzzle_img = document.getElementById("puzzle_img");
 const nav = document.querySelector("nav");
 const header_div = document.getElementById("header_div");
@@ -50,6 +53,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
   
+//initialize variables
 var btns = document.querySelectorAll(".action_btn");
 
 var startBtn = document.querySelector(".btn");
@@ -102,6 +106,7 @@ switch(size) {
         break;
 }
 
+//shuffle function for randomizing array
 function shuffle(arr) {
     let currentIndex = arr.length,  randomIndex;
   
@@ -114,14 +119,17 @@ function shuffle(arr) {
     return arr;
 }
 
+//disable action buttons at first
 for(let i = 0; i < btns.length; i++)
 {
     btns[i].disabled = true;
 }
 
+//set the last action button to be the empty one
 btns[btns.length - 1].style.color = "buttonface";
 
 startBtn.addEventListener("click", function() {
+    //enable all action buttons
     for(let i = 0; i < btns.length; i++) {
         btns[i].style.fontWeight = "normal";
         btns[i].disabled = false;
@@ -135,10 +143,12 @@ startBtn.addEventListener("click", function() {
     }
 
     array = shuffle(array);
+    //assign values to the action buttons corresponding to the shuffled array
     for(let i = 1; i < btns.length; i++) {
         btns[i].innerHTML = array[i - 1];
     }
 
+    //set the first action button to be the empty one
     btns[0].style.color = "buttonface";
     btns[0].innerHTML = ".";
 
@@ -146,6 +156,7 @@ startBtn.addEventListener("click", function() {
     minutes = 0;
     hours = 0;
 
+    //check if we need to start a new timer
     if(startBtn.innerHTML === "Start" || restart) {
         restart = false;
 
@@ -169,6 +180,7 @@ startBtn.addEventListener("click", function() {
     startBtn.innerHTML = "Restart";
 });
 
+//helper functions
 function checkForWin() {
     for(let i = 0; i < btns.length - 1; i++)
     {
@@ -185,6 +197,7 @@ function getScore()
     return (hours * 60 + minutes) * 60 + seconds;
 }
 
+//buttons moving logic
 for(let i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function() {
         if(i + 1 > rowSize) { //check up
@@ -223,7 +236,9 @@ for(let i = 0; i < btns.length; i++) {
             }
         }
         
+        //check if the last combination is the winning one
         if(checkForWin()) {
+            //some style
             for(let i = 0; i < btns.length - 1; i++) {
                 btns[i].style.color = "darkmagenta";
                 btns[i].style.fontWeight = "bold";
@@ -238,6 +253,7 @@ for(let i = 0; i < btns.length; i++) {
                 var user = Object.values(data).filter(k => k.username === username)[0];
                 var score = getScore();
 
+                //update database
                 switch (sizeText) {
                     case "easy":
                         if(score < user.easy)

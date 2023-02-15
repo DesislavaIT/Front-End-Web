@@ -2,6 +2,9 @@ if(!localStorage.user) {
     location.href = "../html/Login.html";
 }
 
+///////////////////////////////////////////////////////////////////////////////////
+// NAV FUNCTIONALITY:
+
 const puzzle_img = document.getElementById("puzzle_img");
 const nav = document.querySelector("nav");
 const header_div = document.getElementById("header_div");
@@ -50,8 +53,10 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const dbRef = ref(getDatabase());
 
+const selectElement = document.getElementById("size");
 var username = localStorage.getItem("user");
 
+//compare functions
 function compareUsersEasy(user1, user2) {
     if(user1.easy < user2.easy) {
         return -1;
@@ -136,6 +141,7 @@ function compareUsersHard(user1, user2) {
     return 0;
 }
 
+//getting score
 function TurnScoreIntoTime(score)
 {
     const seconds = score % 60;
@@ -145,6 +151,7 @@ function TurnScoreIntoTime(score)
     return result;
 }
 
+//show initial score - easy
 get(child(dbRef, `users`)).then((snapshot) => {
     let tbody = document.querySelector("tbody");
 
@@ -170,8 +177,7 @@ get(child(dbRef, `users`)).then((snapshot) => {
     }
 });
 
-const selectElement = document.getElementById("size");
-
+//show score on change
 selectElement.addEventListener("change", (event) => {
     const size = event.target.value;
     switch(size) {
@@ -258,11 +264,3 @@ selectElement.addEventListener("change", (event) => {
             break;
     }
 });
-
-
-//back button
-var btn = document.querySelector(".back");
-
-btn.addEventListener("click", event => {
-    location.href = "../html/HomePage.html";
-})
