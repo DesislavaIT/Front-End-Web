@@ -1,3 +1,7 @@
+if(!localStorage.user) {
+    location.href = "../html/Login.html";
+}
+
 const puzzle_img = document.getElementById("puzzle_img");
 const nav = document.querySelector("nav");
 const header_div = document.getElementById("header_div");
@@ -50,7 +54,23 @@ var btns = document.querySelectorAll(".action_btn");
 
 var startBtn = document.querySelector(".btn");
 
-var size = Math.sqrt(btns.length);
+var sizeText = localStorage.getItem("size").toLowerCase();
+
+var size = 0;
+
+switch(sizeText) {
+    case "easy":
+        size = 9;
+        break;
+    case "medium":
+        size = 16;
+        break;
+    case "hard":
+        size = 25;
+        break;
+}
+
+var rowSize = Math.sqrt(size);
 
 var array = [1, 2, 3, 4, 5, 6, 7, 8];
 var result = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -150,7 +170,7 @@ startBtn.addEventListener("click", function() {
 });
 
 function checkForWin() {
-    for(let i = 0; i < result.length; i++)
+    for(let i = 0; i < btns.length - 1; i++)
     {
         if(btns[i].innerHTML != result[i]) {
             return false;
@@ -167,25 +187,25 @@ function getScore()
 
 for(let i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function() {
-        if(i + 1 > size) {
-            if(btns[i - size].innerHTML === ".") {
-                btns[i - size].innerHTML = btns[i].innerHTML;
-                btns[i - size].style.color = "buttontext";
+        if(i + 1 > rowSize) { //check up
+            if(btns[i - rowSize].innerHTML === ".") {
+                btns[i - rowSize].innerHTML = btns[i].innerHTML;
+                btns[i - rowSize].style.color = "buttontext";
                 btns[i].innerHTML = ".";
                 btns[i].style.color = "buttonface";
             }
         }
 
-        if(i + 1 <= btns.length - size) {
-            if(btns[i + size].innerHTML === ".") {
-                btns[i + size].innerHTML = btns[i].innerHTML;
-                btns[i + size].style.color = "buttontext";
+        if(i + 1 <= btns.length - rowSize) { //check down
+            if(btns[i + rowSize].innerHTML === ".") {
+                btns[i + rowSize].innerHTML = btns[i].innerHTML;
+                btns[i + rowSize].style.color = "buttontext";
                 btns[i].innerHTML = ".";
                 btns[i].style.color = "buttonface";
             }
         }
 
-        if((i + 1) % size !== 0) {
+        if((i + 1) % rowSize !== 0) { //check right
             if(btns[i + 1].innerHTML === ".") {
                 btns[i + 1].innerHTML = btns[i].innerHTML;
                 btns[i + 1].style.color = "buttontext";
@@ -194,7 +214,7 @@ for(let i = 0; i < btns.length; i++) {
             }
         }
 
-        if((i + 1) % size !== 1) {
+        if((i + 1) % rowSize !== 1) { //check left
             if(btns[i - 1].innerHTML === ".") {
                 btns[i - 1].innerHTML = btns[i].innerHTML;
                 btns[i - 1].style.color = "buttontext";
@@ -218,13 +238,30 @@ for(let i = 0; i < btns.length; i++) {
                 var user = Object.values(data).filter(k => k.username === username)[0];
                 var score = getScore();
 
-                if(score < user.score)
-                {   
-                    user.score = score;
-                    user.lastTimeModified = Date.now();
-                    const usersRef = ref(database, `users/${user.username}`);
-                    set(usersRef, user);
+                switch (sizeText) {
+                    case "easy":
+                        if(score < user.easy)
+                        {   
+                            user.easy = score;
+                        }
+                        break;
+                    case "medium":
+                        if(score < user.medium)
+                        {   
+                            user.medium = score;
+                        }
+                        break;
+                    case "hard":
+                        if(score < user.hard)
+                        {   
+                            user.hard = score;
+                        }
+                        break;
                 }
+
+                user.lastTimeModified = Date.now();
+                const usersRef = ref(database, `users/${user.username}`);
+                set(usersRef, user);
             })
 
             clearInterval(timer);

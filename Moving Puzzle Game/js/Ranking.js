@@ -1,3 +1,7 @@
+if(!localStorage.user) {
+    location.href = "../html/Login.html";
+}
+
 const puzzle_img = document.getElementById("puzzle_img");
 const nav = document.querySelector("nav");
 const header_div = document.getElementById("header_div");
@@ -48,12 +52,68 @@ const dbRef = ref(getDatabase());
 
 var username = localStorage.getItem("user");
 
-function compareUsers(user1, user2) {
-    if(user1.score < user2.score) {
+function compareUsersEasy(user1, user2) {
+    if(user1.easy < user2.easy) {
         return -1;
     }
 
-    if(user1.score > user2.score) {
+    if(user1.easy > user2.easy) {
+        return 1;
+    }
+
+    if(user1.lastTimeModified < user2.lastTimeModified) {
+        return -1;
+    }
+
+    if(user1.lastTimeModified > user2.lastTimeModified) {
+        return 1;
+    }
+
+    if(user1.username < user2.username) {
+        return -1;
+    }
+
+    if(user1.username > user2.username) {
+        return 1;
+    }
+
+    return 0;
+}
+
+function compareUsersMedium(user1, user2) {
+    if(user1.medium < user2.medium) {
+        return -1;
+    }
+
+    if(user1.medium > user2.medium) {
+        return 1;
+    }
+
+    if(user1.lastTimeModified < user2.lastTimeModified) {
+        return -1;
+    }
+
+    if(user1.lastTimeModified > user2.lastTimeModified) {
+        return 1;
+    }
+
+    if(user1.username < user2.username) {
+        return -1;
+    }
+
+    if(user1.username > user2.username) {
+        return 1;
+    }
+
+    return 0;
+}
+
+function compareUsersHard(user1, user2) {
+    if(user1.hard < user2.hard) {
+        return -1;
+    }
+
+    if(user1.hard > user2.hard) {
         return 1;
     }
 
@@ -90,7 +150,7 @@ get(child(dbRef, `users`)).then((snapshot) => {
 
     const data = snapshot.val();
     let users = Object.values(data).map(k => k);
-    users.sort(compareUsers);
+    users.sort(compareUsersEasy);
     
     let currentUser = users.filter(k => k["username"] === username)[0];
 
@@ -99,7 +159,7 @@ get(child(dbRef, `users`)).then((snapshot) => {
         var tr = document.createElement("tr");
         tr.innerHTML = `<td>${i + 1}</td>
         <td>${users[i].username}</td>
-        <td>${(users[i].score === Number.MAX_VALUE ? "No data" : TurnScoreIntoTime(users[i].score))}</td>
+        <td>${(users[i].easy === Number.MAX_VALUE ? "No data" : TurnScoreIntoTime(users[i].easy))}</td>
         <td>${new Date(users[i].lastTimeModified).toLocaleString()}</td>`;
         if(currentUser === users[i])
         {
@@ -110,7 +170,98 @@ get(child(dbRef, `users`)).then((snapshot) => {
     }
 });
 
-var btn = document.querySelector(".btn");
+const selectElement = document.getElementById("size");
+
+selectElement.addEventListener("change", (event) => {
+    const size = event.target.value;
+    switch(size) {
+        case "Easy":
+            get(child(dbRef, `users`)).then((snapshot) => {
+                let tbody = document.querySelector("tbody");
+                tbody.innerHTML = "";
+            
+                const data = snapshot.val();
+                let users = Object.values(data).map(k => k);
+                users.sort(compareUsersEasy);
+                
+                let currentUser = users.filter(k => k["username"] === username)[0];
+            
+                for(let i = 0; i < users.length; i++)
+                {
+                    var tr = document.createElement("tr");
+                    tr.innerHTML = `<td>${i + 1}</td>
+                    <td>${users[i].username}</td>
+                    <td>${(users[i].easy === Number.MAX_VALUE ? "No data" : TurnScoreIntoTime(users[i].easy))}</td>
+                    <td>${new Date(users[i].lastTimeModified).toLocaleString()}</td>`;
+                    if(currentUser === users[i])
+                    {
+                        tr.style.backgroundColor = "palevioletred";
+                    }
+            
+                    tbody.appendChild(tr);
+                }
+            });
+            break;
+        case "Medium":
+            get(child(dbRef, `users`)).then((snapshot) => {
+                let tbody = document.querySelector("tbody");
+                tbody.innerHTML = "";
+            
+                const data = snapshot.val();
+                let users = Object.values(data).map(k => k);
+                users.sort(compareUsersMedium);
+                
+                let currentUser = users.filter(k => k["username"] === username)[0];
+            
+                for(let i = 0; i < users.length; i++)
+                {
+                    var tr = document.createElement("tr");
+                    tr.innerHTML = `<td>${i + 1}</td>
+                    <td>${users[i].username}</td>
+                    <td>${(users[i].medium === Number.MAX_VALUE ? "No data" : TurnScoreIntoTime(users[i].medium))}</td>
+                    <td>${new Date(users[i].lastTimeModified).toLocaleString()}</td>`;
+                    if(currentUser === users[i])
+                    {
+                        tr.style.backgroundColor = "palevioletred";
+                    }
+            
+                    tbody.appendChild(tr);
+                }
+            });
+            break;
+        case "Hard":
+            get(child(dbRef, `users`)).then((snapshot) => {
+                let tbody = document.querySelector("tbody");
+                tbody.innerHTML = "";
+            
+                const data = snapshot.val();
+                let users = Object.values(data).map(k => k);
+                users.sort(compareUsersHard);
+                
+                let currentUser = users.filter(k => k["username"] === username)[0];
+            
+                for(let i = 0; i < users.length; i++)
+                {
+                    var tr = document.createElement("tr");
+                    tr.innerHTML = `<td>${i + 1}</td>
+                    <td>${users[i].username}</td>
+                    <td>${(users[i].hard === Number.MAX_VALUE ? "No data" : TurnScoreIntoTime(users[i].hard))}</td>
+                    <td>${new Date(users[i].lastTimeModified).toLocaleString()}</td>`;
+                    if(currentUser === users[i])
+                    {
+                        tr.style.backgroundColor = "palevioletred";
+                    }
+            
+                    tbody.appendChild(tr);
+                }
+            });
+            break;
+    }
+});
+
+
+//back button
+var btn = document.querySelector(".back");
 
 btn.addEventListener("click", event => {
     location.href = "../html/HomePage.html";

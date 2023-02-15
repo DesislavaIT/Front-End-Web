@@ -2,8 +2,8 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ranking</title>
 
         <link rel="stylesheet" href="../css/Ranking.css">
@@ -19,7 +19,7 @@
                     <ul>
                         <li><a href="../html/HomePage.html">Home Page</a></li>
                         <li><a href="../html/Ranking.html">Ranking</a></li>
-                        <li><a href="../html/Game.html">Game</a></li>
+                        <li><a href="../html/Game_3x3.html">Game</a></li>
                         <li><a href="../html/Login.html">Log out</a></li>
                     </ul>
                 </nav>
@@ -27,7 +27,21 @@
         </header>
 
         <section id="main_section">
-            <h1>Ranking</h1>
+            <div id="one_line">
+                <h1>Ranking:</h1>
+                <select id="size" name="size" required>
+                    <option value="Easy">
+                        Easy
+                    </option>
+                    <option value="Medium">
+                        Medium
+                    </option>
+                    <option value="Hard">
+                        Hard
+                    </option>
+                </select>
+            </div>
+
             <table>
                 <thead>
                     <tr id="th_row">
@@ -38,13 +52,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Adding users here -->
+                   <!-- Adding users here -->
                 </tbody>
             </table>
         </section>
         
         <footer>
-            <button class="btn">Back</button>
+            <a href="HomePage.html" class="back">&#8617;</a>
         </footer>
     </body>
 </html>

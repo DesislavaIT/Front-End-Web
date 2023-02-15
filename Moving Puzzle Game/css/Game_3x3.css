@@ -1,0 +1,31 @@
+.action_btn {
+    width: 15vw;
+    height: 20vh;
+    margin: 2px 1px;
+    padding: 0;
+    font-size: 40px;
+}
+
+@media only screen and (max-width: 915px) {
+    #header_div {
+        display: none;
+    }
+
+    .action_btn {
+        width: 25vw;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    header {
+        width: 90%;
+    }
+
+    #header_div {
+        display: none;
+    }
+
+    .action_btn {
+        width: 25vw;
+    }
+}

@@ -1,3 +1,7 @@
+if(!localStorage.user) {
+    location.href = "../html/Login.html";
+}
+
 const puzzle_img = document.getElementById("puzzle_img");
 const nav = document.querySelector("nav");
 const header_div = document.getElementById("header_div");
@@ -27,34 +31,34 @@ puzzle_img.addEventListener("click", function() {
     }
 });
 
-// TODO:
-// const selectElement = document.querySelector("#size");
+const selectElement = document.querySelector("#size");
 
-// function changeSize () {
-//     switch(selectElement.value) {
-//         case "Easy":
-//             console.log("Easy");
-//             break;
-//         case "Medium":
-//             console.log("Medium");
-//             break;
-//         case "Hard":
-//             console.log("Hard");
-//             break;
-//     }
-// }
-
-// changeSize();
-
-// selectElement.addEventListener("change", function() {
-//     changeSize();
-// });
+function checkSize () {
+    switch(selectElement.value) {
+        case "Easy":
+            return "Easy";
+        case "Medium":
+            return "Medium";
+        case "Hard":
+            return "Hard";
+    }
+}
 
 var start_btn = document.querySelectorAll(".btn")[0];
 var ranking_btn = document.querySelectorAll(".btn")[1];
 
 start_btn.addEventListener("click", event => {
-    location.href = "../html/Game.html";
+    const size = checkSize();
+    window.localStorage.setItem('size', size);
+    if(size === "Easy") {
+        location.href = "../html/Game_3x3.html";
+    }
+    else if(size === "Medium") {
+        location.href = "../html/Game_4x4.html";
+    }
+    else if(size === "Hard") {
+        location.href = "../html/Game_5x5.html";
+    }
 })
 
 ranking_btn.addEventListener("click", event => {

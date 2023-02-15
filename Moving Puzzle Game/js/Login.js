@@ -30,6 +30,8 @@ puzzle_img.addEventListener("click", function() {
 ///////////////////////////////////////////////////////////////////////////////////
 // DATABASE:
 
+localStorage.clear();
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import { getDatabase, ref, child, get} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 

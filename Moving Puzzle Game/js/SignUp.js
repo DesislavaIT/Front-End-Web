@@ -30,6 +30,8 @@ puzzle_img.addEventListener("click", function() {
 ///////////////////////////////////////////////////////////////////////////////////
 // DATABASE:
 
+localStorage.clear();
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import { getDatabase, ref, child, get, set} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
@@ -148,7 +150,9 @@ signUpBtn.addEventListener("click", event => {
             "username": `${usernameInput.value}`,
             "email": `${emailInput.value}`,
             "password": `${passwordInput.value}`,
-            "score": Number.MAX_VALUE,
+            "easy": Number.MAX_VALUE,
+            "medium": Number.MAX_VALUE,
+            "hard": Number.MAX_VALUE,
             "lastTimeModified": Date.now()
         };
 

@@ -4,8 +4,8 @@
 }
 
 body {
-    height: 700px;
     margin: 15px;
+    height: 96vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -41,55 +41,38 @@ h2 {
     width: 40px;
     height: 40px;
     padding: 5px;
-    margin: 2px;
     border: 2px solid darkmagenta;
-    border-radius: 5px;
+    border-radius: 10px;
     align-self: flex-end;
-}
-
-#puzzle_img:hover {
-    border-color: white;
 }
 
 #main_section {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-direction: column;
     align-items: center;
-    height: 580px;
-}
-
-.action_btn {
-    width: 230px;
-    height: 130px;
-    margin: 2px 1px;
-    padding: 0;
-    font-size: 40px;
 }
 
 .action_btn:disabled {
-    width: 230px;
-    height: 130px;
-    margin: 2px 1px;
-    padding: 0;
-    font-size: 40px;
     background-color: #e5e5e5;
     color: black;
 }
 
 footer {
     display: flex;
-    justify-content: space-evenly;
     height: 80px;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .btn {
     width: 300px;
-    height: 50px;
-    font-size: 22px;
+    height: 60px;
+    font-size: 30px;
     border-radius: 10px;
     color: white;
     background-color: darkmagenta;
+    align-self: center;
 }
 
 .btn:hover {
@@ -104,8 +87,9 @@ footer {
 #header_div {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     align-self: flex-start;
+    height: 237px;
     width: 150px;
     border-radius: 10px;
 }
@@ -136,10 +120,12 @@ li {
     background-color: darkmagenta;
     list-style: none;
     width: 100%;
-    height: 100%;
+    height: 98%;
     text-align: center;
     padding-top: 10px;
     border-top: 2px white solid;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 li:last-child {
@@ -163,4 +149,24 @@ li:last-child:hover {
     background-color: grey;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+}
+
+.back {
+    height: 50px;
+    width: 50px;
+    text-decoration: none;
+    padding: 5px;
+    font-size: 50px;
+    border-radius: 10px;
+    color: white;
+    align-self: center;
+}
+
+.back:hover {
+    background-color: darkmagenta;
+    color: white;
+}
+
+.hide {
+    visibility: hidden;
 }
