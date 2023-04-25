@@ -149,7 +149,6 @@ h1 {
 table {
     position: absolute;
     top: 25%;
-    left: 50% - 20px;
     width: 70%;
     background-color: white;
     color: black;

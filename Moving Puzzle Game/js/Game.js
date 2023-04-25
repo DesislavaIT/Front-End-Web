@@ -58,6 +58,10 @@ var btns = document.querySelectorAll(".action_btn");
 
 var startBtn = document.querySelector(".btn");
 
+if(!localStorage.getItem("size")) {
+    window.localStorage.setItem('size', "Easy");
+}
+
 var sizeText = localStorage.getItem("size").toLowerCase();
 
 var size = 0;
